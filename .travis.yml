@@ -9,6 +9,7 @@ script:
   - docker run hmquan/react-test npm test -- --coverage
 
 after_success:
+  # Build production image
   - docker build -t hmquan/client ./client
   - docker build -t hmquan/server ./server
   - docker build -t hmquan/worker ./worker
