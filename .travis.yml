@@ -10,14 +10,14 @@ script:
 
 after_success:
   # Build production image
-  - docker build -t hmquan/client ./client
-  - docker build -t hmquan/server ./server
-  - docker build -t hmquan/worker ./worker
-  - docker build -t hmquan/nginx ./nginx
+  - docker build -t 080196/client ./client
+  - docker build -t 080196/server ./server
+  - docker build -t 080196/worker ./worker
+  - docker build -t 080196/nginx ./nginx
   # Login to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login docker.io --username "$DOCKER_ID" --password-stdin
   # Push to docker hub
-  - docker push hmquan/client
-  - docker push hmquan/server
-  - docker push hmquan/worker
-  - docker push hmquan/nginx
+  - docker push 080196/client
+  - docker push 080196/server
+  - docker push 080196/worker
+  - docker push 080196/nginx
